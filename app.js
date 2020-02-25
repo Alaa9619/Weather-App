@@ -1,5 +1,7 @@
 const request = require('request')
 const geocode= require('./utils/geocode')
+const forecast= require('./utils/forecast')
+
 // const url = 'https://api.darksky.net/forecast/c869d2ed3aea4f1ec32c97bfdef39f2d/37.8267'//,-122.4233 (should be added to the url for getting a useful data)
 // request({url:url, json: true}, (error, response) => {// if you have a value of error there is no value of response and vice versa
 //     if(error){ //error occures when there is no internet connection
@@ -23,10 +25,8 @@ const geocode= require('./utils/geocode')
 // })
 
 
-geocode('Cairo', (error, data) =>{
-    console.log('error: ',error)
-    console.log('data: ',data)
 
-
-
-} )
+forecast(-75.7088, 44.1545, (error, data) => {
+  console.log('Error', error)
+  console.log('Data', data)
+})
